@@ -27,8 +27,7 @@ final class DBHelper {
             + NSBundle.mainBundle().bundleIdentifier!
         
         NSFileManager.defaultManager().createDirectoryAtPath(
-            path, withIntermediateDirectories: true, attributes: nil, error: nil
-        )
+            path, withIntermediateDirectories: true, attributes: nil, error: nil)
         
         instance = Database("\(path)/db.sqlite3")
         

@@ -95,15 +95,16 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
             view = NSTextField(frame: NSRect())
             view!.identifier = identifier!.rawValue
         }
-        view!.editable = false
-        view!.bezeled = false
-        view!.backgroundColor = NSColor.clearColor()
+        
+        view?.editable = false
+        view?.bezeled = false
+        view?.backgroundColor = NSColor.clearColor()
         
         switch identifier! {
         case .Title:
-            view!.stringValue = bookmarks?[row].title ?? ""
+            view?.stringValue = bookmarks?[row].title ?? ""
         case .URL:
-            view!.stringValue = bookmarks?[row].URL ?? ""
+            view?.stringValue = bookmarks?[row].URL ?? ""
         }
         
         return view as NSView?

@@ -12,6 +12,14 @@ Swift で開発した Mac OSX 向けのシンプルなウェブブラウザ。We
 勉強用に作ったアプリなので実装は割と適当。
 
 
+Setup
+=====
+
+::
+
+    $ rogue install
+
+
 Requirements
 ============
 
