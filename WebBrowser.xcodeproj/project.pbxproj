@@ -1,0 +1,597 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC05D65C1A84D48F00081EAE /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC05D6591A84D47000081EAE /* SQLite.framework */; };
+		DC1514A71A8631B500597291 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149B1A8631B500597291 /* ActionsViewController.swift */; };
+		DC1514A81A8631B500597291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149C1A8631B500597291 /* AppDelegate.swift */; };
+		DC1514A91A8631B500597291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC15149D1A8631B500597291 /* Main.storyboard */; };
+		DC1514AA1A8631B500597291 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149F1A8631B500597291 /* Bookmark.swift */; };
+		DC1514AB1A8631B500597291 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A01A8631B500597291 /* BookmarksViewController.swift */; };
+		DC1514AC1A8631B500597291 /* consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A11A8631B500597291 /* consts.swift */; };
+		DC1514AD1A8631B500597291 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A21A8631B500597291 /* DBHelper.swift */; };
+		DC1514AE1A8631B500597291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1514A31A8631B500597291 /* Images.xcassets */; };
+		DC1514AF1A8631B500597291 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1514A41A8631B500597291 /* Info.plist */; };
+		DC1514B01A8631B500597291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A51A8631B500597291 /* ViewController.swift */; };
+		DC1514B41A8631C400597291 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1514B21A8631C400597291 /* Info.plist */; };
+		DC1514B51A8631C400597291 /* WebBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514B31A8631C400597291 /* WebBrowserTests.swift */; };
+		DC3AD9A81A836DB5001B0A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3AD9A71A836DB5001B0A07 /* WebKit.framework */; };
+		DC40F1A11A845FB5009AB83A /* NSError+REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1921A845F9A009AB83A /* NSError+REValidation.h */; };
+		DC40F1A21A845FB5009AB83A /* NSError+REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1931A845F9A009AB83A /* NSError+REValidation.m */; };
+		DC40F1A31A845FB5009AB83A /* REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1941A845F9A009AB83A /* REValidation.h */; };
+		DC40F1A41A845FB5009AB83A /* REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1951A845F9A009AB83A /* REValidation.m */; };
+		DC40F1A51A845FB5009AB83A /* REValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1961A845F9A009AB83A /* REValidator.h */; };
+		DC40F1A61A845FB5009AB83A /* REValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1971A845F9A009AB83A /* REValidator.m */; };
+		DC40F1A71A845FB5009AB83A /* REEmailValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1991A845F9A009AB83A /* REEmailValidator.h */; };
+		DC40F1A81A845FB5009AB83A /* REEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19A1A845F9A009AB83A /* REEmailValidator.m */; };
+		DC40F1A91A845FB5009AB83A /* RELengthValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19B1A845F9A009AB83A /* RELengthValidator.h */; };
+		DC40F1AA1A845FB5009AB83A /* RELengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19C1A845F9A009AB83A /* RELengthValidator.m */; };
+		DC40F1AB1A845FB5009AB83A /* REPresenceValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19D1A845F9A009AB83A /* REPresenceValidator.h */; };
+		DC40F1AC1A845FB5009AB83A /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */; };
+		DC40F1AD1A845FB5009AB83A /* REURLValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19F1A845F9A009AB83A /* REURLValidator.h */; };
+		DC40F1AE1A845FB5009AB83A /* REURLValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1A01A845F9A009AB83A /* REURLValidator.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC05D6541A84D47000081EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773F319C8CBB3004FCF85;
+			remoteInfo = "SQLite iOS";
+		};
+		DC05D6561A84D47000081EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC3773FE19C8CBB3004FCF85;
+			remoteInfo = "SQLite iOS Tests";
+		};
+		DC05D6581A84D47000081EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC37741419C8CC2F004FCF85;
+			remoteInfo = "SQLite Mac";
+		};
+		DC05D65A1A84D47000081EAE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DC37741E19C8CC2F004FCF85;
+			remoteInfo = "SQLite Mac Tests";
+		};
+		DC399E1B1A83464600C3F248 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC399E001A83464500C3F248 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC399E071A83464500C3F248;
+			remoteInfo = SwiftWebBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = libs/SQLite.swift/SQLite.xcodeproj; sourceTree = "<group>"; };
+		DC15149B1A8631B500597291 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
+		DC15149C1A8631B500597291 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC15149E1A8631B500597291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC15149F1A8631B500597291 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		DC1514A01A8631B500597291 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		DC1514A11A8631B500597291 /* consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = consts.swift; sourceTree = "<group>"; };
+		DC1514A21A8631B500597291 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		DC1514A31A8631B500597291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC1514A41A8631B500597291 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC1514A51A8631B500597291 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC1514A61A8631B500597291 /* WebBrowser-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WebBrowser-Bridging-Header.h"; sourceTree = "<group>"; };
+		DC1514B21A8631C400597291 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC1514B31A8631C400597291 /* WebBrowserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserTests.swift; sourceTree = "<group>"; };
+		DC399E081A83464500C3F248 /* WebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC3AD9A71A836DB5001B0A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		DC40F1921A845F9A009AB83A /* NSError+REValidation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+REValidation.h"; sourceTree = "<group>"; };
+		DC40F1931A845F9A009AB83A /* NSError+REValidation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+REValidation.m"; sourceTree = "<group>"; };
+		DC40F1941A845F9A009AB83A /* REValidation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REValidation.h; sourceTree = "<group>"; };
+		DC40F1951A845F9A009AB83A /* REValidation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REValidation.m; sourceTree = "<group>"; };
+		DC40F1961A845F9A009AB83A /* REValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REValidator.h; sourceTree = "<group>"; };
+		DC40F1971A845F9A009AB83A /* REValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REValidator.m; sourceTree = "<group>"; };
+		DC40F1991A845F9A009AB83A /* REEmailValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REEmailValidator.h; sourceTree = "<group>"; };
+		DC40F19A1A845F9A009AB83A /* REEmailValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REEmailValidator.m; sourceTree = "<group>"; };
+		DC40F19B1A845F9A009AB83A /* RELengthValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RELengthValidator.h; sourceTree = "<group>"; };
+		DC40F19C1A845F9A009AB83A /* RELengthValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RELengthValidator.m; sourceTree = "<group>"; };
+		DC40F19D1A845F9A009AB83A /* REPresenceValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REPresenceValidator.h; sourceTree = "<group>"; };
+		DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPresenceValidator.m; sourceTree = "<group>"; };
+		DC40F19F1A845F9A009AB83A /* REURLValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REURLValidator.h; sourceTree = "<group>"; };
+		DC40F1A01A845F9A009AB83A /* REURLValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REURLValidator.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC399E051A83464500C3F248 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC05D65C1A84D48F00081EAE /* SQLite.framework in Frameworks */,
+				DC3AD9A81A836DB5001B0A07 /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC399E171A83464600C3F248 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC05D64E1A84D47000081EAE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC05D6551A84D47000081EAE /* SQLite.framework */,
+				DC05D6571A84D47000081EAE /* SQLite iOS Tests.xctest */,
+				DC05D6591A84D47000081EAE /* SQLite.framework */,
+				DC05D65B1A84D47000081EAE /* SQLite Mac Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC0DAEAF1A83AD76004E1DBA /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				DC40F1911A845F9A009AB83A /* REValidation */,
+				DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */,
+				DC3AD9A71A836DB5001B0A07 /* WebKit.framework */,
+			);
+			name = libs;
+			sourceTree = "<group>";
+		};
+		DC15149A1A8631B500597291 /* WebBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				DC1514A31A8631B500597291 /* Images.xcassets */,
+				DC1514A41A8631B500597291 /* Info.plist */,
+				DC15149D1A8631B500597291 /* Main.storyboard */,
+				DC1514A61A8631B500597291 /* WebBrowser-Bridging-Header.h */,
+				DC1514A11A8631B500597291 /* consts.swift */,
+				DC15149C1A8631B500597291 /* AppDelegate.swift */,
+				DC1514A51A8631B500597291 /* ViewController.swift */,
+				DC1514A01A8631B500597291 /* BookmarksViewController.swift */,
+				DC15149B1A8631B500597291 /* ActionsViewController.swift */,
+				DC15149F1A8631B500597291 /* Bookmark.swift */,
+				DC1514A21A8631B500597291 /* DBHelper.swift */,
+			);
+			path = WebBrowser;
+			sourceTree = "<group>";
+		};
+		DC1514B11A8631C400597291 /* WebBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC1514B21A8631C400597291 /* Info.plist */,
+				DC1514B31A8631C400597291 /* WebBrowserTests.swift */,
+			);
+			path = WebBrowserTests;
+			sourceTree = "<group>";
+		};
+		DC399DFF1A83464500C3F248 = {
+			isa = PBXGroup;
+			children = (
+				DC15149A1A8631B500597291 /* WebBrowser */,
+				DC1514B11A8631C400597291 /* WebBrowserTests */,
+				DC399E091A83464500C3F248 /* Products */,
+				DC0DAEAF1A83AD76004E1DBA /* libs */,
+			);
+			sourceTree = "<group>";
+		};
+		DC399E091A83464500C3F248 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC399E081A83464500C3F248 /* WebBrowser.app */,
+				DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC40F1911A845F9A009AB83A /* REValidation */ = {
+			isa = PBXGroup;
+			children = (
+				DC40F1921A845F9A009AB83A /* NSError+REValidation.h */,
+				DC40F1931A845F9A009AB83A /* NSError+REValidation.m */,
+				DC40F1941A845F9A009AB83A /* REValidation.h */,
+				DC40F1951A845F9A009AB83A /* REValidation.m */,
+				DC40F1961A845F9A009AB83A /* REValidator.h */,
+				DC40F1971A845F9A009AB83A /* REValidator.m */,
+				DC40F1981A845F9A009AB83A /* Validators */,
+			);
+			name = REValidation;
+			path = libs/REValidation/REValidation;
+			sourceTree = "<group>";
+		};
+		DC40F1981A845F9A009AB83A /* Validators */ = {
+			isa = PBXGroup;
+			children = (
+				DC40F1991A845F9A009AB83A /* REEmailValidator.h */,
+				DC40F19A1A845F9A009AB83A /* REEmailValidator.m */,
+				DC40F19B1A845F9A009AB83A /* RELengthValidator.h */,
+				DC40F19C1A845F9A009AB83A /* RELengthValidator.m */,
+				DC40F19D1A845F9A009AB83A /* REPresenceValidator.h */,
+				DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */,
+				DC40F19F1A845F9A009AB83A /* REURLValidator.h */,
+				DC40F1A01A845F9A009AB83A /* REURLValidator.m */,
+			);
+			path = Validators;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC399E071A83464500C3F248 /* WebBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC399E241A83464600C3F248 /* Build configuration list for PBXNativeTarget "WebBrowser" */;
+			buildPhases = (
+				DC399E041A83464500C3F248 /* Sources */,
+				DC399E051A83464500C3F248 /* Frameworks */,
+				DC399E061A83464500C3F248 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebBrowser;
+			productName = SwiftWebBrowser;
+			productReference = DC399E081A83464500C3F248 /* WebBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC399E191A83464600C3F248 /* WebBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC399E271A83464600C3F248 /* Build configuration list for PBXNativeTarget "WebBrowserTests" */;
+			buildPhases = (
+				DC399E161A83464600C3F248 /* Sources */,
+				DC399E171A83464600C3F248 /* Frameworks */,
+				DC399E181A83464600C3F248 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC399E1C1A83464600C3F248 /* PBXTargetDependency */,
+			);
+			name = WebBrowserTests;
+			productName = SwiftWebBrowser;
+			productReference = DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC399E001A83464500C3F248 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = wak;
+				TargetAttributes = {
+					DC399E071A83464500C3F248 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					DC399E191A83464600C3F248 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = DC399E071A83464500C3F248;
+					};
+				};
+			};
+			buildConfigurationList = DC399E031A83464500C3F248 /* Build configuration list for PBXProject "WebBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC399DFF1A83464500C3F248;
+			productRefGroup = DC399E091A83464500C3F248 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = DC05D64E1A84D47000081EAE /* Products */;
+					ProjectRef = DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				DC399E071A83464500C3F248 /* WebBrowser */,
+				DC399E191A83464600C3F248 /* WebBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		DC05D6551A84D47000081EAE /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DC05D6541A84D47000081EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC05D6571A84D47000081EAE /* SQLite iOS Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLite iOS Tests.xctest";
+			remoteRef = DC05D6561A84D47000081EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC05D6591A84D47000081EAE /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = DC05D6581A84D47000081EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		DC05D65B1A84D47000081EAE /* SQLite Mac Tests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLite Mac Tests.xctest";
+			remoteRef = DC05D65A1A84D47000081EAE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC399E061A83464500C3F248 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1514A91A8631B500597291 /* Main.storyboard in Resources */,
+				DC1514AE1A8631B500597291 /* Images.xcassets in Resources */,
+				DC1514AF1A8631B500597291 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC399E181A83464600C3F248 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1514B41A8631C400597291 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC399E041A83464500C3F248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1514AB1A8631B500597291 /* BookmarksViewController.swift in Sources */,
+				DC40F1A11A845FB5009AB83A /* NSError+REValidation.h in Sources */,
+				DC40F1A21A845FB5009AB83A /* NSError+REValidation.m in Sources */,
+				DC40F1A31A845FB5009AB83A /* REValidation.h in Sources */,
+				DC1514A71A8631B500597291 /* ActionsViewController.swift in Sources */,
+				DC40F1A41A845FB5009AB83A /* REValidation.m in Sources */,
+				DC1514AA1A8631B500597291 /* Bookmark.swift in Sources */,
+				DC40F1A51A845FB5009AB83A /* REValidator.h in Sources */,
+				DC40F1A61A845FB5009AB83A /* REValidator.m in Sources */,
+				DC40F1A71A845FB5009AB83A /* REEmailValidator.h in Sources */,
+				DC1514A81A8631B500597291 /* AppDelegate.swift in Sources */,
+				DC40F1A81A845FB5009AB83A /* REEmailValidator.m in Sources */,
+				DC40F1A91A845FB5009AB83A /* RELengthValidator.h in Sources */,
+				DC40F1AA1A845FB5009AB83A /* RELengthValidator.m in Sources */,
+				DC40F1AB1A845FB5009AB83A /* REPresenceValidator.h in Sources */,
+				DC1514AC1A8631B500597291 /* consts.swift in Sources */,
+				DC1514AD1A8631B500597291 /* DBHelper.swift in Sources */,
+				DC40F1AC1A845FB5009AB83A /* REPresenceValidator.m in Sources */,
+				DC1514B01A8631B500597291 /* ViewController.swift in Sources */,
+				DC40F1AD1A845FB5009AB83A /* REURLValidator.h in Sources */,
+				DC40F1AE1A845FB5009AB83A /* REURLValidator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC399E161A83464600C3F248 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC1514B51A8631C400597291 /* WebBrowserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC399E1C1A83464600C3F248 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC399E071A83464500C3F248 /* WebBrowser */;
+			targetProxy = DC399E1B1A83464600C3F248 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DC15149D1A8631B500597291 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC15149E1A8631B500597291 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DC399E221A83464600C3F248 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = libs;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC399E231A83464600C3F248 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = libs;
+			};
+			name = Release;
+		};
+		DC399E251A83464600C3F248 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WebBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = WebBrowser;
+				SWIFT_OBJC_BRIDGING_HEADER = "WebBrowser/WebBrowser-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Debug;
+		};
+		DC399E261A83464600C3F248 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = WebBrowser/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = WebBrowser;
+				SWIFT_OBJC_BRIDGING_HEADER = "WebBrowser/WebBrowser-Bridging-Header.h";
+				USER_HEADER_SEARCH_PATHS = "";
+			};
+			name = Release;
+		};
+		DC399E281A83464600C3F248 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WebBrowserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = WebBrowserTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebBrowser.app/Contents/MacOS/WebBrowser";
+			};
+			name = Debug;
+		};
+		DC399E291A83464600C3F248 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WebBrowserTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = WebBrowserTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebBrowser.app/Contents/MacOS/WebBrowser";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC399E031A83464500C3F248 /* Build configuration list for PBXProject "WebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC399E221A83464600C3F248 /* Debug */,
+				DC399E231A83464600C3F248 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC399E241A83464600C3F248 /* Build configuration list for PBXNativeTarget "WebBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC399E251A83464600C3F248 /* Debug */,
+				DC399E261A83464600C3F248 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC399E271A83464600C3F248 /* Build configuration list for PBXNativeTarget "WebBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC399E281A83464600C3F248 /* Debug */,
+				DC399E291A83464600C3F248 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC399E001A83464500C3F248 /* Project object */;
+}
