@@ -22,7 +22,6 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
         URL = 201
     }
     
-//    let defaultURL: String = "https://developer.apple.com/swift/blog/"
     let defaultURL: String = "http://example.com"
     
     let googleSearchURL: String = "http://google.com/search?q=%@"
@@ -156,7 +155,7 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
         println("onDidDeleteBookmarkNotification")
         if let info = notification.userInfo as [ String: String ]? {
             if let title = info["title"] {
-                println("\(title) has been removed from bookmark")
+                putStatus("\"\(title)\" has been removed from bookmark")
             }
         }
     }

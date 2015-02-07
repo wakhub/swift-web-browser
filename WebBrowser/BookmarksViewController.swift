@@ -18,7 +18,9 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
     
     var bookmarks: [Bookmark]?
     
-    private enum ColumnIdentifier: String {
+    let CellIdentifier = "Cell"
+    
+    enum ColumnIdentifier: String {
         case Title = "Title", URL = "URL"
     }
     
@@ -89,25 +91,27 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        let identifier = ColumnIdentifier(rawValue: tableColumn!.identifier)
-        var view: NSTextField? = tableView.makeViewWithIdentifier("Cell", owner: self) as NSTextField?
-        if view == nil  {
-            view = NSTextField(frame: NSRect())
-            view!.identifier = identifier!.rawValue
+        var view: NSTextField? = tableView.makeViewWithIdentifier(CellIdentifier, owner: self) as NSTextField?
+        if let tableColumn = tableColumn {
+            if let identifier = ColumnIdentifier(rawValue: tableColumn.identifier) {
+                if view == nil {
+                    view = NSTextField(frame: NSRect())
+                    view?.identifier = identifier.rawValue
+                }
+                view?.editable = false
+                view?.bezeled = false
+                view?.backgroundColor = NSColor.clearColor()
+                
+                switch identifier {
+                case .Title:
+                    view?.stringValue = bookmarks?[row].title ?? ""
+                case .URL:
+                    view?.stringValue = bookmarks?[row].URL ?? ""
+                }
+            }
         }
         
-        view?.editable = false
-        view?.bezeled = false
-        view?.backgroundColor = NSColor.clearColor()
-        
-        switch identifier! {
-        case .Title:
-            view?.stringValue = bookmarks?[row].title ?? ""
-        case .URL:
-            view?.stringValue = bookmarks?[row].URL ?? ""
-        }
-        
-        return view as NSView?
+        return view?
     }
     
     // MARK: - NSTableViewDelegate
