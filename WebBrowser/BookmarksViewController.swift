@@ -75,8 +75,6 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
     }
     
     @IBAction func onSelectDeleteMenuItem(sender: NSMenuItem) {
-        println("delete")
-        
         if let row = tableView?.clickedRow {
             if let bookmark = bookmarks?[row] {
                 deleteBookmark(bookmark)

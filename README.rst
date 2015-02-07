@@ -30,9 +30,20 @@ Requirements
 References
 ==========
 
+- **Swift**
+
+  - | github/swift-style-guide
+    | https://github.com/github/swift-style-guide
+  - | github/gitignore/Swift.gitignore
+    | https://github.com/github/gitignore/blob/master/Swift.gitignore
+
+- **Cocoa**
+
+  - | System-Provided Images
+    | https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/SystemProvided.html
+  - | NSNotificationCenter addObserver in Swift while call a private method
+    | http://stackoverflow.com/questions/26483052/nsnotificationcenter-addobserver-in-swift-while-call-a-private-method
+
 - | オレブラウザを作る 01
   | http://mc909j.blogspot.com/2013/03/mybrowser01.html
-- | System-Provided Images
-  | https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/SystemProvided.html
-- | NSNotificationCenter addObserver in Swift while call a private method
-  | http://stackoverflow.com/questions/26483052/nsnotificationcenter-addobserver-in-swift-while-call-a-private-method
+
