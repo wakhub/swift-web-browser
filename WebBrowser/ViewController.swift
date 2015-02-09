@@ -42,7 +42,7 @@ final class ViewController: NSViewController, WebBrowserBehaviour, NSTextFieldDe
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(
             self,
-            selector: "onShuoldAddBookmarkNotification:",
+            selector: "onShouldAddBookmarkNotification:",
             name: ShouldAddBookmarkNotification,
             object: nil)
         center.addObserver(
@@ -126,7 +126,7 @@ final class ViewController: NSViewController, WebBrowserBehaviour, NSTextFieldDe
     }
     
     func onShouldOpenBookmarkNotification(notification: NSNotification) {
-        println("onShuoldOpenBookmarkNotification")
+        println("onShouldOpenBookmarkNotification")
         if let info = notification.userInfo as [ String: String ]? {
             if let URL = info["URL"] {
                 loadURL(URL)
