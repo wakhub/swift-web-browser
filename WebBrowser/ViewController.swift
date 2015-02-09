@@ -12,7 +12,7 @@ import WebKit
 import SQLite
 
 
-final class ViewController: NSViewController, NSTextFieldDelegate {
+final class ViewController: NSViewController, WebBrowserBehaviour, NSTextFieldDelegate {
     
     enum ToolbarItemTag: Int {
         case
@@ -22,35 +22,17 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
         URL = 201
     }
     
-    let defaultURL: String = "http://example.com"
-    
-    let googleSearchURL: String = "http://google.com/search?q=%@"
-    
     @IBOutlet weak var webView: WebView?
     
     @IBOutlet weak var statusTextField: NSTextField?
     
-    var toolbarItemBackButton: NSButton?
+    weak var backButton: NSButton?
     
-    var toolbarItemForwardButton: NSButton?
+    weak var forwardButton: NSButton?
     
-    var toolbarItemRefreshButton: NSButton?
+    weak var refreshButton: NSButton?
     
-    var toolbarItemURLTextField: NSTextField?
-    
-    var currentURL: String {
-        if let item = webView?.backForwardList.currentItem {
-            return item.URLString ?? ""
-        }
-        return ""
-    }
-    
-    var currentTitle: String {
-        if let item  = webView?.backForwardList.currentItem {
-            return item.title ?? ""
-        }
-        return ""
-    }
+    weak var URLTextField: NSTextField?
     
     // MARK: - View lifecycle
     
@@ -60,26 +42,19 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
         let center = NSNotificationCenter.defaultCenter()
         center.addObserver(
             self,
-            selector: "onAddBookmarkNotification:",
-            name: AddBookmarkNotification,
+            selector: "onShuoldAddBookmarkNotification:",
+            name: ShouldAddBookmarkNotification,
             object: nil)
         center.addObserver(
             self,
-            selector: "onOpenBookmarkNotification:",
-            name: OpenBookmarkNotification,
+            selector: "onShouldOpenBookmarkNotification:",
+            name: ShouldOpenBookmarkNotification,
             object: nil)
         center.addObserver(
             self,
             selector: "onDidDeleteBookmarkNotification:",
             name: DidDeleteBookmarkNotification,
             object: nil)
-        
-        REValidation.registerDefaultValidators()
-        REValidation.registerDefaultErrorMessages()
-        
-        if let DB = DBHelper.DB() {
-            Bookmark.createTable(DB)
-        }
     }
     
     override func viewDidAppear() {
@@ -91,26 +66,25 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
                 if let tag = ToolbarItemTag(rawValue: toolbarItem.tag) {
                     switch tag {
                     case .Back:
-                        toolbarItemBackButton = toolbarItem.view as NSButton?
-                        toolbarItemBackButton?.target = self
-                        toolbarItemBackButton?.action = "onClickBackButton:"
+                        backButton = toolbarItem.view as NSButton?
+                        backButton?.target = self
+                        backButton?.action = "onClickBackButton:"
                     case .Forward:
-                        toolbarItemForwardButton = toolbarItem.view as NSButton?
-                        toolbarItemForwardButton?.target = self
-                        toolbarItemForwardButton?.action = "onClickForwardButton:"
+                        forwardButton = toolbarItem.view as NSButton?
+                        forwardButton?.target = self
+                        forwardButton?.action = "onClickForwardButton:"
                     case .Refresh:
-                        toolbarItemRefreshButton = toolbarItem.view as NSButton?
-                        toolbarItemRefreshButton?.target = self
-                        toolbarItemRefreshButton?.action = "onClickRefreshButton:"
+                        refreshButton = toolbarItem.view as NSButton?
+                        refreshButton?.target = self
+                        refreshButton?.action = "onClickRefreshButton:"
                     case .URL:
-                        toolbarItemURLTextField = toolbarItem.view as NSTextField?
-                        toolbarItemURLTextField?.delegate = self
+                        URLTextField = toolbarItem.view as NSTextField?
+                        URLTextField?.delegate = self
                     }
                 }
             }
         }
-        toolbarItemURLTextField?.stringValue = defaultURL
-        webView?.takeStringURLFrom(toolbarItemURLTextField)
+        loadURL(Const.defultURL)
     }
     
     // MARK: -
@@ -127,26 +101,35 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
         webView?.reload(nil)
     }
     
-    func onAddBookmarkNotification(notification: NSNotification) {
-        println("onAddBookmarkNotification")
-        if let DB = DBHelper.DB() {
-            let insertedID: Int? = Bookmark.query(DB).insert(
-                Bookmark.title <- currentTitle,
-                Bookmark.URL <- currentURL)
-            if insertedID != nil {
-                putStatus("Added \(currentTitle) into bookmark")
-            } else {
-                putStatus("Failed to add \(currentTitle) into bookmark")
-            }
+    func onShouldAddBookmarkNotification(notification: NSNotification) {
+        println("onShouldAddBookmarkNotification")
+        let URL = currentURL
+        if URL.isEmpty {
+            return
         }
+        let title = !currentTitle.isEmpty ? currentTitle : URL
+        var insertedID: Int?
+        Async
+            .background({
+                if let DB = DBHelper.DB() {
+                    insertedID = Bookmark.query(DB).insert(
+                        Bookmark.title <- title,
+                        Bookmark.URL <- URL)
+                }
+            }).main({ [weak self] in
+                if insertedID == nil {
+                    self?.putStatus("Failed to add \(title) into bookmark")
+                } else {
+                    self?.putStatus("Added \(title) into bookmark")
+                }
+            })
     }
     
-    func onOpenBookmarkNotification(notification: NSNotification) {
-        println("onOpenBookmarkNotification")
+    func onShouldOpenBookmarkNotification(notification: NSNotification) {
+        println("onShuoldOpenBookmarkNotification")
         if let info = notification.userInfo as [ String: String ]? {
             if let URL = info["URL"] {
-                toolbarItemURLTextField?.stringValue = URL
-                webView?.takeStringURLFrom(toolbarItemURLTextField)
+                loadURL(URL)
             }
         }
     }
@@ -162,19 +145,48 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
     
     func refreshViews() {
         if let webView = webView {
-            toolbarItemBackButton?.enabled = webView.canGoBack
-            toolbarItemForwardButton?.enabled = webView.canGoForward
-            toolbarItemRefreshButton?.enabled = !currentURL.isEmpty
+            backButton?.enabled = webView.canGoBack
+            forwardButton?.enabled = webView.canGoForward
+            refreshButton?.enabled = !currentURL.isEmpty
         }
+    }
+    
+    func getURLStringFromFrame(frame: WebFrame?) -> String? {
+        return frame?.provisionalDataSource?.request.URL?.absoluteString
+    }
+    
+    // MARK: - WebBrowserBehaviour
+    
+    var currentURL: String {
+        if let item = webView?.backForwardList.currentItem {
+            return item.URLString ?? ""
+        }
+        return ""
+    }
+    
+    var currentTitle: String {
+        if let item  = webView?.backForwardList.currentItem {
+            return item.title ?? ""
+        }
+        return ""
+    }
+    
+    func loadURL(URLOrKeyword: String) -> Bool {
+        if URLOrKeyword.isEmpty {
+            return false
+        }
+        let errors = Array(REValidation.validateObject(URLOrKeyword, name: "url", validators: ["url", "presence"]))
+        let URLString = errors.isEmpty
+            ? URLOrKeyword
+            : String(format: Const.googleSearchURL, URLOrKeyword)
+        URLTextField?.stringValue = URLString
+        webView?.takeStringURLFrom(URLTextField)
+        return true
     }
     
     func putStatus(status: String) {
         println(status)
         statusTextField?.stringValue = status
-    }
-    
-    func getURLStringFromFrame(frame: WebFrame?) -> String? {
-        return frame?.provisionalDataSource?.request.URL?.absoluteString
     }
     
     // MARK: - WebFrameLoadDelegate (informal)
@@ -188,7 +200,7 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
     override func webView(sender: WebView!, didStartProvisionalLoadForFrame frame: WebFrame!) {
         if let URL = getURLStringFromFrame(frame) {
             if sender.mainFrame === frame && !URL.isEmpty {
-                toolbarItemURLTextField?.stringValue = URL
+                URLTextField?.stringValue = URL
                 refreshViews()
             }
             putStatus("Loading \(URL)")
@@ -196,13 +208,15 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
     }
     
     override func webView(sender: WebView!, didReceiveTitle title: String!, forFrame frame: WebFrame!) {
-        self.view.window?.title = title ?? ""
+        if sender.mainFrame === frame {
+            self.view.window?.title = title ?? ""
+        }
     }
     
     override func webView(sender: WebView!, didReceiveServerRedirectForProvisionalLoadForFrame frame: WebFrame!) {
         if let URL = getURLStringFromFrame(frame) {
             if sender.mainFrame === frame && !URL.isEmpty {
-                toolbarItemURLTextField?.stringValue = URL
+                URLTextField?.stringValue = URL
                 putStatus("Redirecting to \(URL)")
                 refreshViews()
             }
@@ -223,17 +237,6 @@ final class ViewController: NSViewController, NSTextFieldDelegate {
     // MARK: - NSTextFieldDelegate
     
     func control(control: NSControl, textShouldEndEditing fieldEditor: NSText) -> Bool {
-        let URL = toolbarItemURLTextField?.stringValue ?? ""
-        let errors = Array(REValidation.validateObject(
-            URL, name: "url", validators: ["url", "presence"]))
-        if !errors.isEmpty {
-            println("\(errors)")
-            if URL.isEmpty {
-                return false
-            }
-            toolbarItemURLTextField?.stringValue = String(format: googleSearchURL, URL)
-        }
-        webView?.takeStringURLFrom(toolbarItemURLTextField)
-        return true
+        return loadURL(URLTextField?.stringValue ?? "")
     }
 }

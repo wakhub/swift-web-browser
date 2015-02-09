@@ -14,39 +14,44 @@ import SQLite
 
 final class BookmarksViewController : NSViewController, NSTableViewDataSource, NSTableViewDelegate {
     
-    @IBOutlet weak var tableView: NSTableView?
-    
-    var bookmarks: [Bookmark]?
-    
-    let CellIdentifier = "Cell"
-    
     enum ColumnIdentifier: String {
         case Title = "Title", URL = "URL"
     }
+    
+    let cellIdentifier = "Cell"
+    
+    @IBOutlet weak var tableView: NSTableView?
+    
+    var bookmarks: [Bookmark]?
     
     // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshViews()
+        reloadData()
     }
     
     // MARK: -
     
-    func refreshViews() {
-        if let DB = DBHelper.DB() {
-            Bookmark.createTable(DB)
-            bookmarks = Array(Bookmark.query(DB)).map {
-                (var row) -> Bookmark in
-                Bookmark(row)
-            }
-        }
-        tableView?.reloadData()
+    func reloadData() {
+        Async
+            .background({ [weak self] in
+                if let DB = DBHelper.DB() {
+                    Bookmark.createTable(DB)
+                    self?.bookmarks = Array(Bookmark.query(DB)).map {
+                        (var row) -> Bookmark in
+                        Bookmark(row)
+                    }
+                }
+            }).main({ [weak self] in
+                self?.tableView?.reloadData()
+                return
+            })
     }
     
     func openBookmark(bookmark: Bookmark) {
         let notification = NSNotification(
-            name: OpenBookmarkNotification,
+            name: ShouldOpenBookmarkNotification,
             object: self,
             userInfo: bookmark.asDictionary())
         NSNotificationCenter.defaultCenter().postNotification(notification)
@@ -54,16 +59,21 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
     }
     
     func deleteBookmark(bookmark: Bookmark) {
-        if let DB = DBHelper.DB() {
-            if let ID = Bookmark.query(DB).filter(Bookmark.ID == bookmark.ID).delete() {
-                let notification = NSNotification(
-                    name: DidDeleteBookmarkNotification,
-                    object: self,
-                    userInfo: bookmark.asDictionary())
-                refreshViews()
-                NSNotificationCenter.defaultCenter().postNotification(notification)
-            }
-        }
+        Async
+            .background({ [weak self] in
+                if let DB = DBHelper.DB() {
+                    if let ID = Bookmark.query(DB).filter(Bookmark.ID == bookmark.ID).delete() {
+                        let notification = NSNotification(
+                            name: DidDeleteBookmarkNotification,
+                            object: self?,
+                            userInfo: bookmark.asDictionary())
+                        NSNotificationCenter.defaultCenter().postNotification(notification)
+                    }
+                }
+            }).main({ [weak self] in
+                self?.reloadData()
+                return
+            })
     }
     
     @IBAction func onSelectOpenMenuItem(sender: NSMenuItem) {
@@ -89,7 +99,7 @@ final class BookmarksViewController : NSViewController, NSTableViewDataSource, N
     }
     
     func tableView(tableView: NSTableView, viewForTableColumn tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        var view: NSTextField? = tableView.makeViewWithIdentifier(CellIdentifier, owner: self) as NSTextField?
+        var view: NSTextField? = tableView.makeViewWithIdentifier(cellIdentifier, owner: self) as NSTextField?
         if let tableColumn = tableColumn {
             if let identifier = ColumnIdentifier(rawValue: tableColumn.identifier) {
                 if view == nil {

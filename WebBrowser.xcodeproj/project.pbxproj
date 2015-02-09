@@ -11,9 +11,8 @@
 		DC1514A71A8631B500597291 /* ActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149B1A8631B500597291 /* ActionsViewController.swift */; };
 		DC1514A81A8631B500597291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149C1A8631B500597291 /* AppDelegate.swift */; };
 		DC1514A91A8631B500597291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC15149D1A8631B500597291 /* Main.storyboard */; };
-		DC1514AA1A8631B500597291 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC15149F1A8631B500597291 /* Bookmark.swift */; };
 		DC1514AB1A8631B500597291 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A01A8631B500597291 /* BookmarksViewController.swift */; };
-		DC1514AC1A8631B500597291 /* consts.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A11A8631B500597291 /* consts.swift */; };
+		DC1514AC1A8631B500597291 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A11A8631B500597291 /* notifications.swift */; };
 		DC1514AD1A8631B500597291 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514A21A8631B500597291 /* DBHelper.swift */; };
 		DC1514AE1A8631B500597291 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC1514A31A8631B500597291 /* Images.xcassets */; };
 		DC1514AF1A8631B500597291 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1514A41A8631B500597291 /* Info.plist */; };
@@ -21,6 +20,7 @@
 		DC1514B41A8631C400597291 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC1514B21A8631C400597291 /* Info.plist */; };
 		DC1514B51A8631C400597291 /* WebBrowserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1514B31A8631C400597291 /* WebBrowserTests.swift */; };
 		DC3AD9A81A836DB5001B0A07 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC3AD9A71A836DB5001B0A07 /* WebKit.framework */; };
+		DC3E567F1A867C650091CCB2 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E567E1A867C650091CCB2 /* Async.swift */; };
 		DC40F1A11A845FB5009AB83A /* NSError+REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1921A845F9A009AB83A /* NSError+REValidation.h */; };
 		DC40F1A21A845FB5009AB83A /* NSError+REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1931A845F9A009AB83A /* NSError+REValidation.m */; };
 		DC40F1A31A845FB5009AB83A /* REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1941A845F9A009AB83A /* REValidation.h */; };
@@ -35,6 +35,37 @@
 		DC40F1AC1A845FB5009AB83A /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */; };
 		DC40F1AD1A845FB5009AB83A /* REURLValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19F1A845F9A009AB83A /* REURLValidator.h */; };
 		DC40F1AE1A845FB5009AB83A /* REURLValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1A01A845F9A009AB83A /* REURLValidator.m */; };
+		DC7CCC9B1A889E1D00046AA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CCC9A1A889E1D00046AA0 /* AppDelegate.swift */; };
+		DC7CCC9D1A889E1D00046AA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CCC9C1A889E1D00046AA0 /* ViewController.swift */; };
+		DC7CCCA01A889E1D00046AA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DC7CCC9E1A889E1D00046AA0 /* Main.storyboard */; };
+		DC7CCCA21A889E1D00046AA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC7CCCA11A889E1D00046AA0 /* Images.xcassets */; };
+		DC7CCCA51A889E1D00046AA0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC7CCCA31A889E1D00046AA0 /* LaunchScreen.xib */; };
+		DC7CCCB11A889E1D00046AA0 /* WebBrowserIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CCCB01A889E1D00046AA0 /* WebBrowserIOSTests.swift */; };
+		DC7CCCBD1A88B72100046AA0 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC7CCCBC1A88B72100046AA0 /* BookmarksViewController.swift */; };
+		DC90934A1A88E10B00A21A63 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9093491A88E10B00A21A63 /* DBHelper.swift */; };
+		DC9093501A88E4CB00A21A63 /* notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC90934F1A88E4CB00A21A63 /* notifications.swift */; };
+		DCAD3E821A88C8ED004BC767 /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC05D6551A84D47000081EAE /* SQLite.framework */; };
+		DCAD3E831A88C906004BC767 /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3E567E1A867C650091CCB2 /* Async.swift */; };
+		DCAD3E841A88C912004BC767 /* NSError+REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1921A845F9A009AB83A /* NSError+REValidation.h */; };
+		DCAD3E851A88C912004BC767 /* NSError+REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1931A845F9A009AB83A /* NSError+REValidation.m */; };
+		DCAD3E861A88C912004BC767 /* REValidation.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1941A845F9A009AB83A /* REValidation.h */; };
+		DCAD3E871A88C912004BC767 /* REValidation.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1951A845F9A009AB83A /* REValidation.m */; };
+		DCAD3E881A88C912004BC767 /* REValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1961A845F9A009AB83A /* REValidator.h */; };
+		DCAD3E891A88C912004BC767 /* REValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1971A845F9A009AB83A /* REValidator.m */; };
+		DCAD3E8A1A88C912004BC767 /* REEmailValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1991A845F9A009AB83A /* REEmailValidator.h */; };
+		DCAD3E8B1A88C912004BC767 /* REEmailValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19A1A845F9A009AB83A /* REEmailValidator.m */; };
+		DCAD3E8C1A88C912004BC767 /* RELengthValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19B1A845F9A009AB83A /* RELengthValidator.h */; };
+		DCAD3E8D1A88C912004BC767 /* RELengthValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19C1A845F9A009AB83A /* RELengthValidator.m */; };
+		DCAD3E8E1A88C912004BC767 /* REPresenceValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19D1A845F9A009AB83A /* REPresenceValidator.h */; };
+		DCAD3E8F1A88C912004BC767 /* REPresenceValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */; };
+		DCAD3E901A88C912004BC767 /* REURLValidator.h in Sources */ = {isa = PBXBuildFile; fileRef = DC40F19F1A845F9A009AB83A /* REURLValidator.h */; };
+		DCAD3E911A88C912004BC767 /* REURLValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = DC40F1A01A845F9A009AB83A /* REURLValidator.m */; };
+		DCAD3E991A88CD6F004BC767 /* WebBrowserBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E981A88CD6F004BC767 /* WebBrowserBehaviour.swift */; };
+		DCAD3E9A1A88CD6F004BC767 /* WebBrowserBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E981A88CD6F004BC767 /* WebBrowserBehaviour.swift */; };
+		DCAD3E9C1A88D348004BC767 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E9B1A88D348004BC767 /* Const.swift */; };
+		DCAD3E9D1A88D348004BC767 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E9B1A88D348004BC767 /* Const.swift */; };
+		DCAD3E9F1A88D395004BC767 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E9E1A88D395004BC767 /* Bookmark.swift */; };
+		DCAD3EA01A88D395004BC767 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCAD3E9E1A88D395004BC767 /* Bookmark.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +104,13 @@
 			remoteGlobalIDString = DC399E071A83464500C3F248;
 			remoteInfo = SwiftWebBrowser;
 		};
+		DC7CCCAB1A889E1D00046AA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC399E001A83464500C3F248 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC7CCC951A889E1D00046AA0;
+			remoteInfo = WebBrowserIOS;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -80,9 +118,8 @@
 		DC15149B1A8631B500597291 /* ActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsViewController.swift; sourceTree = "<group>"; };
 		DC15149C1A8631B500597291 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DC15149E1A8631B500597291 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DC15149F1A8631B500597291 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		DC1514A01A8631B500597291 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
-		DC1514A11A8631B500597291 /* consts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = consts.swift; sourceTree = "<group>"; };
+		DC1514A11A8631B500597291 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
 		DC1514A21A8631B500597291 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		DC1514A31A8631B500597291 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DC1514A41A8631B500597291 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +130,7 @@
 		DC399E081A83464500C3F248 /* WebBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC3AD9A71A836DB5001B0A07 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		DC3E567E1A867C650091CCB2 /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Async.swift; path = libs/Async/Async.swift; sourceTree = "<group>"; };
 		DC40F1921A845F9A009AB83A /* NSError+REValidation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+REValidation.h"; sourceTree = "<group>"; };
 		DC40F1931A845F9A009AB83A /* NSError+REValidation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+REValidation.m"; sourceTree = "<group>"; };
 		DC40F1941A845F9A009AB83A /* REValidation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REValidation.h; sourceTree = "<group>"; };
@@ -107,6 +145,23 @@
 		DC40F19E1A845F9A009AB83A /* REPresenceValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REPresenceValidator.m; sourceTree = "<group>"; };
 		DC40F19F1A845F9A009AB83A /* REURLValidator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = REURLValidator.h; sourceTree = "<group>"; };
 		DC40F1A01A845F9A009AB83A /* REURLValidator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = REURLValidator.m; sourceTree = "<group>"; };
+		DC7CCC961A889E1D00046AA0 /* WebBrowserIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebBrowserIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7CCC991A889E1D00046AA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC7CCC9A1A889E1D00046AA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DC7CCC9C1A889E1D00046AA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DC7CCC9F1A889E1D00046AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DC7CCCA11A889E1D00046AA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		DC7CCCA41A889E1D00046AA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		DC7CCCAA1A889E1D00046AA0 /* WebBrowserIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WebBrowserIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7CCCAF1A889E1D00046AA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DC7CCCB01A889E1D00046AA0 /* WebBrowserIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBrowserIOSTests.swift; sourceTree = "<group>"; };
+		DC7CCCBC1A88B72100046AA0 /* BookmarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		DC9093491A88E10B00A21A63 /* DBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		DC90934F1A88E4CB00A21A63 /* notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = notifications.swift; sourceTree = "<group>"; };
+		DC9093511A88F98A00A21A63 /* WebBrowserIOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebBrowserIOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		DCAD3E981A88CD6F004BC767 /* WebBrowserBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebBrowserBehaviour.swift; path = Common/WebBrowserBehaviour.swift; sourceTree = SOURCE_ROOT; };
+		DCAD3E9B1A88D348004BC767 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Const.swift; path = Common/Const.swift; sourceTree = SOURCE_ROOT; };
+		DCAD3E9E1A88D395004BC767 /* Bookmark.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bookmark.swift; path = Common/Bookmark.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +175,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		DC399E171A83464600C3F248 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7CCC931A889E1D00046AA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCAD3E821A88C8ED004BC767 /* SQLite.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7CCCA71A889E1D00046AA0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -143,6 +213,7 @@
 		DC0DAEAF1A83AD76004E1DBA /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				DC3E56791A867C500091CCB2 /* Async */,
 				DC40F1911A845F9A009AB83A /* REValidation */,
 				DC05D64D1A84D47000081EAE /* SQLite.xcodeproj */,
 				DC3AD9A71A836DB5001B0A07 /* WebKit.framework */,
@@ -153,17 +224,16 @@
 		DC15149A1A8631B500597291 /* WebBrowser */ = {
 			isa = PBXGroup;
 			children = (
-				DC1514A31A8631B500597291 /* Images.xcassets */,
-				DC1514A41A8631B500597291 /* Info.plist */,
-				DC15149D1A8631B500597291 /* Main.storyboard */,
 				DC1514A61A8631B500597291 /* WebBrowser-Bridging-Header.h */,
-				DC1514A11A8631B500597291 /* consts.swift */,
+				DC1514A11A8631B500597291 /* notifications.swift */,
 				DC15149C1A8631B500597291 /* AppDelegate.swift */,
 				DC1514A51A8631B500597291 /* ViewController.swift */,
 				DC1514A01A8631B500597291 /* BookmarksViewController.swift */,
 				DC15149B1A8631B500597291 /* ActionsViewController.swift */,
-				DC15149F1A8631B500597291 /* Bookmark.swift */,
 				DC1514A21A8631B500597291 /* DBHelper.swift */,
+				DC15149D1A8631B500597291 /* Main.storyboard */,
+				DC1514A31A8631B500597291 /* Images.xcassets */,
+				DC1514A41A8631B500597291 /* Info.plist */,
 			);
 			path = WebBrowser;
 			sourceTree = "<group>";
@@ -180,8 +250,11 @@
 		DC399DFF1A83464500C3F248 = {
 			isa = PBXGroup;
 			children = (
+				DCAD3E921A88CA40004BC767 /* Common */,
 				DC15149A1A8631B500597291 /* WebBrowser */,
 				DC1514B11A8631C400597291 /* WebBrowserTests */,
+				DC7CCC971A889E1D00046AA0 /* WebBrowserIOS */,
+				DC7CCCAD1A889E1D00046AA0 /* WebBrowserIOSTests */,
 				DC399E091A83464500C3F248 /* Products */,
 				DC0DAEAF1A83AD76004E1DBA /* libs */,
 			);
@@ -192,8 +265,18 @@
 			children = (
 				DC399E081A83464500C3F248 /* WebBrowser.app */,
 				DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */,
+				DC7CCC961A889E1D00046AA0 /* WebBrowserIOS.app */,
+				DC7CCCAA1A889E1D00046AA0 /* WebBrowserIOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		DC3E56791A867C500091CCB2 /* Async */ = {
+			isa = PBXGroup;
+			children = (
+				DC3E567E1A867C650091CCB2 /* Async.swift */,
+			);
+			name = Async;
 			sourceTree = "<group>";
 		};
 		DC40F1911A845F9A009AB83A /* REValidation */ = {
@@ -224,6 +307,51 @@
 				DC40F1A01A845F9A009AB83A /* REURLValidator.m */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		DC7CCC971A889E1D00046AA0 /* WebBrowserIOS */ = {
+			isa = PBXGroup;
+			children = (
+				DC9093511A88F98A00A21A63 /* WebBrowserIOS-Bridging-Header.h */,
+				DC90934F1A88E4CB00A21A63 /* notifications.swift */,
+				DC7CCC9A1A889E1D00046AA0 /* AppDelegate.swift */,
+				DC7CCC9C1A889E1D00046AA0 /* ViewController.swift */,
+				DC7CCCBC1A88B72100046AA0 /* BookmarksViewController.swift */,
+				DC9093491A88E10B00A21A63 /* DBHelper.swift */,
+				DC7CCC9E1A889E1D00046AA0 /* Main.storyboard */,
+				DC7CCCA31A889E1D00046AA0 /* LaunchScreen.xib */,
+				DC7CCCA11A889E1D00046AA0 /* Images.xcassets */,
+				DC7CCC991A889E1D00046AA0 /* Info.plist */,
+			);
+			path = WebBrowserIOS;
+			sourceTree = "<group>";
+		};
+		DC7CCCAD1A889E1D00046AA0 /* WebBrowserIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				DC7CCCB01A889E1D00046AA0 /* WebBrowserIOSTests.swift */,
+				DC7CCCAE1A889E1D00046AA0 /* Supporting Files */,
+			);
+			path = WebBrowserIOSTests;
+			sourceTree = "<group>";
+		};
+		DC7CCCAE1A889E1D00046AA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC7CCCAF1A889E1D00046AA0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCAD3E921A88CA40004BC767 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DCAD3E9B1A88D348004BC767 /* Const.swift */,
+				DCAD3E9E1A88D395004BC767 /* Bookmark.swift */,
+				DCAD3E981A88CD6F004BC767 /* WebBrowserBehaviour.swift */,
+			);
+			name = Common;
+			path = WebBrowserIOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +392,41 @@
 			productReference = DC399E1A1A83464600C3F248 /* WebBrowserTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		DC7CCC951A889E1D00046AA0 /* WebBrowserIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC7CCCBA1A889E1D00046AA0 /* Build configuration list for PBXNativeTarget "WebBrowserIOS" */;
+			buildPhases = (
+				DC7CCC921A889E1D00046AA0 /* Sources */,
+				DC7CCC931A889E1D00046AA0 /* Frameworks */,
+				DC7CCC941A889E1D00046AA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WebBrowserIOS;
+			productName = WebBrowserIOS;
+			productReference = DC7CCC961A889E1D00046AA0 /* WebBrowserIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC7CCCA91A889E1D00046AA0 /* WebBrowserIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC7CCCBB1A889E1D00046AA0 /* Build configuration list for PBXNativeTarget "WebBrowserIOSTests" */;
+			buildPhases = (
+				DC7CCCA61A889E1D00046AA0 /* Sources */,
+				DC7CCCA71A889E1D00046AA0 /* Frameworks */,
+				DC7CCCA81A889E1D00046AA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC7CCCAC1A889E1D00046AA0 /* PBXTargetDependency */,
+			);
+			name = WebBrowserIOSTests;
+			productName = WebBrowserIOSTests;
+			productReference = DC7CCCAA1A889E1D00046AA0 /* WebBrowserIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -279,6 +442,13 @@
 					DC399E191A83464600C3F248 = {
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = DC399E071A83464500C3F248;
+					};
+					DC7CCC951A889E1D00046AA0 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					DC7CCCA91A889E1D00046AA0 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = DC7CCC951A889E1D00046AA0;
 					};
 				};
 			};
@@ -303,6 +473,8 @@
 			targets = (
 				DC399E071A83464500C3F248 /* WebBrowser */,
 				DC399E191A83464600C3F248 /* WebBrowserTests */,
+				DC7CCC951A889E1D00046AA0 /* WebBrowserIOS */,
+				DC7CCCA91A889E1D00046AA0 /* WebBrowserIOSTests */,
 			);
 		};
 /* End PBXProject section */
@@ -357,6 +529,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC7CCC941A889E1D00046AA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7CCCA01A889E1D00046AA0 /* Main.storyboard in Resources */,
+				DC7CCCA51A889E1D00046AA0 /* LaunchScreen.xib in Resources */,
+				DC7CCCA21A889E1D00046AA0 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7CCCA81A889E1D00046AA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -366,11 +555,12 @@
 			files = (
 				DC1514AB1A8631B500597291 /* BookmarksViewController.swift in Sources */,
 				DC40F1A11A845FB5009AB83A /* NSError+REValidation.h in Sources */,
+				DC3E567F1A867C650091CCB2 /* Async.swift in Sources */,
 				DC40F1A21A845FB5009AB83A /* NSError+REValidation.m in Sources */,
 				DC40F1A31A845FB5009AB83A /* REValidation.h in Sources */,
+				DCAD3E9C1A88D348004BC767 /* Const.swift in Sources */,
 				DC1514A71A8631B500597291 /* ActionsViewController.swift in Sources */,
 				DC40F1A41A845FB5009AB83A /* REValidation.m in Sources */,
-				DC1514AA1A8631B500597291 /* Bookmark.swift in Sources */,
 				DC40F1A51A845FB5009AB83A /* REValidator.h in Sources */,
 				DC40F1A61A845FB5009AB83A /* REValidator.m in Sources */,
 				DC40F1A71A845FB5009AB83A /* REEmailValidator.h in Sources */,
@@ -379,12 +569,14 @@
 				DC40F1A91A845FB5009AB83A /* RELengthValidator.h in Sources */,
 				DC40F1AA1A845FB5009AB83A /* RELengthValidator.m in Sources */,
 				DC40F1AB1A845FB5009AB83A /* REPresenceValidator.h in Sources */,
-				DC1514AC1A8631B500597291 /* consts.swift in Sources */,
+				DC1514AC1A8631B500597291 /* notifications.swift in Sources */,
 				DC1514AD1A8631B500597291 /* DBHelper.swift in Sources */,
 				DC40F1AC1A845FB5009AB83A /* REPresenceValidator.m in Sources */,
+				DCAD3E991A88CD6F004BC767 /* WebBrowserBehaviour.swift in Sources */,
 				DC1514B01A8631B500597291 /* ViewController.swift in Sources */,
 				DC40F1AD1A845FB5009AB83A /* REURLValidator.h in Sources */,
 				DC40F1AE1A845FB5009AB83A /* REURLValidator.m in Sources */,
+				DCAD3E9F1A88D395004BC767 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +588,44 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC7CCC921A889E1D00046AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCAD3E841A88C912004BC767 /* NSError+REValidation.h in Sources */,
+				DCAD3E851A88C912004BC767 /* NSError+REValidation.m in Sources */,
+				DCAD3E861A88C912004BC767 /* REValidation.h in Sources */,
+				DCAD3E871A88C912004BC767 /* REValidation.m in Sources */,
+				DCAD3E881A88C912004BC767 /* REValidator.h in Sources */,
+				DCAD3EA01A88D395004BC767 /* Bookmark.swift in Sources */,
+				DCAD3E891A88C912004BC767 /* REValidator.m in Sources */,
+				DCAD3E8A1A88C912004BC767 /* REEmailValidator.h in Sources */,
+				DCAD3E8B1A88C912004BC767 /* REEmailValidator.m in Sources */,
+				DCAD3E8C1A88C912004BC767 /* RELengthValidator.h in Sources */,
+				DCAD3E9D1A88D348004BC767 /* Const.swift in Sources */,
+				DC90934A1A88E10B00A21A63 /* DBHelper.swift in Sources */,
+				DCAD3E8D1A88C912004BC767 /* RELengthValidator.m in Sources */,
+				DCAD3E8E1A88C912004BC767 /* REPresenceValidator.h in Sources */,
+				DCAD3E8F1A88C912004BC767 /* REPresenceValidator.m in Sources */,
+				DCAD3E901A88C912004BC767 /* REURLValidator.h in Sources */,
+				DCAD3E911A88C912004BC767 /* REURLValidator.m in Sources */,
+				DCAD3E831A88C906004BC767 /* Async.swift in Sources */,
+				DCAD3E9A1A88CD6F004BC767 /* WebBrowserBehaviour.swift in Sources */,
+				DC7CCCBD1A88B72100046AA0 /* BookmarksViewController.swift in Sources */,
+				DC9093501A88E4CB00A21A63 /* notifications.swift in Sources */,
+				DC7CCC9D1A889E1D00046AA0 /* ViewController.swift in Sources */,
+				DC7CCC9B1A889E1D00046AA0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7CCCA61A889E1D00046AA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7CCCB11A889E1D00046AA0 /* WebBrowserIOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -403,6 +633,11 @@
 			isa = PBXTargetDependency;
 			target = DC399E071A83464500C3F248 /* WebBrowser */;
 			targetProxy = DC399E1B1A83464600C3F248 /* PBXContainerItemProxy */;
+		};
+		DC7CCCAC1A889E1D00046AA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC7CCC951A889E1D00046AA0 /* WebBrowserIOS */;
+			targetProxy = DC7CCCAB1A889E1D00046AA0 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -413,6 +648,22 @@
 				DC15149E1A8631B500597291 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC7CCC9E1A889E1D00046AA0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC7CCC9F1A889E1D00046AA0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DC7CCCA31A889E1D00046AA0 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC7CCCA41A889E1D00046AA0 /* Base */,
+			);
+			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -561,6 +812,78 @@
 			};
 			name = Release;
 		};
+		DC7CCCB21A889E1D00046AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WebBrowserIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WebBrowserIOS/WebBrowserIOS-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		DC7CCCB31A889E1D00046AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = WebBrowserIOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "WebBrowserIOS/WebBrowserIOS-Bridging-Header.h";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC7CCCB41A889E1D00046AA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WebBrowserIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebBrowserIOS.app/WebBrowserIOS";
+			};
+			name = Debug;
+		};
+		DC7CCCB51A889E1D00046AA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = WebBrowserIOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WebBrowserIOS.app/WebBrowserIOS";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -587,6 +910,24 @@
 			buildConfigurations = (
 				DC399E281A83464600C3F248 /* Debug */,
 				DC399E291A83464600C3F248 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC7CCCBA1A889E1D00046AA0 /* Build configuration list for PBXNativeTarget "WebBrowserIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC7CCCB21A889E1D00046AA0 /* Debug */,
+				DC7CCCB31A889E1D00046AA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC7CCCBB1A889E1D00046AA0 /* Build configuration list for PBXNativeTarget "WebBrowserIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC7CCCB41A889E1D00046AA0 /* Debug */,
+				DC7CCCB51A889E1D00046AA0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -13,7 +13,16 @@ import Cocoa
 final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        // Insert code here to initialize your application
+        
+        REValidation.registerDefaultValidators()
+        REValidation.registerDefaultErrorMessages()
+        
+        Async.background({
+            if let DB = DBHelper.DB() {
+                Bookmark.createTable(DB)
+                println("Bookmark table has been created")
+            }
+        })
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {

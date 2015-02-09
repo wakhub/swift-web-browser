@@ -16,7 +16,7 @@ final class ActionsViewController : NSViewController {
     
     @IBAction func onClickAddBookmarkButton(sender: NSButton) {
         NSNotificationCenter.defaultCenter()
-            .postNotificationName(AddBookmarkNotification, object: self)
+            .postNotificationName(ShouldAddBookmarkNotification, object: self)
         dismissViewController(self)
     }
 }

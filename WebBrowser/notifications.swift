@@ -9,10 +9,10 @@
 import Foundation
 
 
-private let Package = "com.github.wakhub.osx.webbrowser"
+private let Package = "com.github.wakhub.webbrowser"
 
-public let AddBookmarkNotification = "\(Package).AddBookmarkNotification"
+public let ShouldAddBookmarkNotification = "\(Package).ShouldAddBookmarkNotification"
 
-public let OpenBookmarkNotification = "\(Package).OpenBookmarkNotification"
+public let ShouldOpenBookmarkNotification = "\(Package).ShouldOpenBookmarkNotification"
 
 public let DidDeleteBookmarkNotification = "\(Package).DidDeleteBookmarkNotification"
